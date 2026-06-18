@@ -3,3 +3,5 @@ __pycache__/
 *.pkl
 .ipynb_checkpoints/
 .vscode/
+
+data/raw/tera_analytics_data.csv
