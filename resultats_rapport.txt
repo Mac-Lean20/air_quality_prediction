@@ -1,0 +1,60 @@
+Chapitre III — Préparation des données
+========================================
+
+Le jeu de données initial contenait 1 856 052 observations. Après analyse,
+46 288 lignes présentant des valeurs manquantes pour les coordonnées
+géographiques (latitude et longitude) ont été supprimées, soit 2,49 % du
+total. Le jeu de données final contient 1 809 764 observations.
+
+Les variables temporelles suivantes ont été extraites à partir de la
+colonne "time" :
+- Année (year)
+- Mois (month)
+- Jour (day)
+- Heure (hour)
+
+Un échantillonnage aléatoire de 100 000 lignes a été effectué pour
+l'entraînement. Les données ont été divisées en deux ensembles :
+- 80 % pour l'entraînement (80 000 observations)
+- 20 % pour le test (20 000 observations)
+
+
+Chapitre IV — Modélisation et prévision
+========================================
+
+Un modèle de régression Random Forest a été utilisé pour prédire les
+concentrations de PM2.5.
+
+Variables explicatives utilisées :
+- PM1 (concentration mesurée par le capteur)
+- Latitude
+- Longitude
+- Année
+- Mois
+- Jour
+- Heure
+
+Variable cible : PM2.5
+
+Hyperparamètres du modèle :
+- n_estimators = 100 (100 arbres)
+- max_depth = 10 (profondeur maximale)
+- random_state = 42
+
+Temps d'exécution : environ 40 secondes sur Intel Core i7 8e génération.
+
+
+Chapitre V — Évaluation des performances
+=========================================
+
+| Métrique | Valeur    | Interprétation                                    |
+|----------|-----------|---------------------------------------------------|
+| MAE      | 0,29 µg/m³| Erreur absolue moyenne : la prédiction s'écarte   |
+|          |           | en moyenne de 0,29 µg/m³ de la valeur réelle      |
+| RMSE     | 1,15 µg/m³| Racine de l'erreur quadratique moyenne            |
+| R²       | 0,9984    | Le modèle explique 99,84 % de la variance        |
+
+Interprétation : Le modèle présente une excellente performance avec
+une précision très élevée. La forte corrélation entre PM1 et PM2.5
+explique cette performance, car les particules PM1 constituent une
+fraction des PM2.5 (R² de 0,9984 indique une prédiction quasi parfaite).
