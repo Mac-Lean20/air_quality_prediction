@@ -42,6 +42,11 @@ Le R² de 0.9984 s'explique par la forte corrélation physique entre PM1 et PM2.
 └── README.md
 ```
 
+## Prérequis
+
+- **Fichier CSV** : Placer `tera_analytics_data.csv` dans `data/raw/` (non fourni dans le dépôt — fichier de 117 MB). Contacter l'auteur pour l'obtenir.
+- Python 3.10+
+
 ## Utilisation
 
 ```bash
