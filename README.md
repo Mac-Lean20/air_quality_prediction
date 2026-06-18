@@ -6,25 +6,6 @@ Ce projet utilise un modèle **Random Forest** pour prédire les concentrations 
 
 Exploiter 1,8 million de mesures de qualité de l'air collectées par des capteurs à Madagascar (31 mars 2024 → 5 juin 2026) pour construire un modèle capable de prédire les particules fines PM2.5.
 
-## Variables
-
-| Variable | Description |
-|----------|-------------|
-| `pm1` | Particules fines ≤ 1µm (entrée) |
-| `pm25` | Particules fines ≤ 2.5µm (cible) |
-| `latitude`, `longitude` | Position du capteur |
-| `year`, `month`, `day`, `hour` | Extraites de la date |
-
-## Performance
-
-| Métrique | Valeur |
-|----------|--------|
-| MAE | 0.29 µg/m³ |
-| RMSE | 1.15 µg/m³ |
-| R² | 0.9984 |
-
-Le R² de 0.9984 s'explique par la forte corrélation physique entre PM1 et PM2.5.
-
 ## Structure
 
 ```
@@ -44,7 +25,7 @@ Le R² de 0.9984 s'explique par la forte corrélation physique entre PM1 et PM2.
 
 ## Prérequis
 
-- **Fichier CSV** : Placer `tera_analytics_data.csv` dans `data/raw/` (non fourni dans le dépôt — fichier de 117 MB). Contacter l'auteur pour l'obtenir.
+- **Fichier CSV** : Placer `tera_analytics_data.csv` dans `data/raw/` push . Contacter l'auteur pour l'obtenir.
 - Python 3.10+
 
 ## Utilisation
